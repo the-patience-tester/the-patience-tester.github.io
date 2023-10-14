@@ -4,8 +4,8 @@ import { LandingComponent } from "./landing/landing.component";
 import { CalculatorComponent } from "./calculator/calculator.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/landing', pathMatch: 'full' },
-  { path: 'landing', component: LandingComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: LandingComponent },
   { path: 'calculator', component: CalculatorComponent },
   // Add more routes for other components if needed
 ];

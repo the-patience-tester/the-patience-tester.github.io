@@ -1,62 +1,32 @@
 <header>
 
-  <title>Peter Simons | QA Lead | petergsimons@gmail.com</title>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
+  <div id="hd">
+    <div class="add-small-spacing">
+        <h1>Peter Simons</h1>
+        <h2>QA Lead</h2>
 
-  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" />
-  <link rel="stylesheet" type="text/css" href="landing.component.css" media="all" />
-
+        <div class="contact-info">
+          <h3><button class="button" (click)="OnDownloadPdfClick()" id="download-pdf">Download PDF</button></h3>
+          <h3><a href="mailto:petergsimons@gmail.com">petergsimons@gmail.com</a></h3>
+          <h3><a href="https://www.linkedin.com/in/peter-simons-5b263abb/">LinkedIn</a></h3>
+        </div><!--// .contact-info -->
+    </div><!--// .yui-gc -->
+  </div><!--// hd -->
 </header>
 
-<div class="header-toolbar">
-  <button class="button"
-          (click)="navigateToCalculator()"
-          id="launch-calculator">
-    Learn to Automate
-  </button>
-</div>
-
 <body>
-
 <div id="pscv" class="yui-t7">
   <div id="inner">
 
-    <div id="hd">
-      <div class="yui-gc">
-        <div class="yui-u first">
-          <h1>Peter Simons</h1>
-          <h2>QA Lead</h2>
-        </div>
-
-        <div class="yui-u">
-          <div class="contact-info">
-            <h3><button class="button" (click)="OnDownloadPdfClick()" id="download-pdf">Download PDF</button></h3>
-            <h3><a href="mailto:petergsimons@gmail.com">petergsimons@gmail.com</a></h3>
-            <h3><a href="https://www.linkedin.com/in/peter-simons-5b263abb/">LinkedIn</a></h3>
-          </div><!--// .contact-info -->
-        </div>
-      </div><!--// .yui-gc -->
-    </div><!--// hd -->
-
     <div id="main-cv">
-          <div class="yui-gf">
-            <div class="yui-u first">
+          <div class="add-small-spacing">
               <h2>Profile</h2>
-            </div>
-            <div class="yui-u">
-              <p class="enlarge">
+              <p>
                 lorem ipsum
               </p>
-            </div>
-          </div><!--// .yui-gf -->
-          <div class="yui-gf">
-            <div class="yui-u first">
+          </div>
+          <div class="add-small-spacing">
               <h2>Skills</h2>
-            </div>
-            <div class="yui-u">
-
               <div class="talent">
                 <h2>Testing</h2>
                 <p>Can check stuff works</p>
@@ -71,13 +41,10 @@
                 <h2>Project Management</h2>
                 <p>Can heard cats</p>
               </div>
-            </div>
-          </div><!--// .yui-gf -->
-          <div class="yui-gf">
-            <div class="yui-u first">
+          </div>
+          <div class="add-bottom-padding">
               <h2>Technical</h2>
             </div>
-            <div class="yui-u">
               <ul class="talent">
                 <li>UI Automation</li>
                 <li>Api Automation</li>
@@ -95,15 +62,10 @@
                 <li>Framework Creation</li>
                 <li class="last">Technical Trainer</li>
               </ul>
-            </div>
-          </div><!--// .yui-gf-->
-          <div class="yui-gf">
+          <div class="add-small-spacing">
 
-            <div class="yui-u first">
+            <div class="experience">
               <h2>Experience</h2>
-            </div><!--// .yui-u -->
-
-            <div class="yui-u">
 
               <div class="job">
                 <h2>place</h2>
@@ -134,16 +96,19 @@
               </div>
 
             </div><!--// .yui-u -->
-          </div><!--// .yui-gf -->
-    </div><!--// main-cv -->
-
-    <div id="ft">
-      <p>Peter Simons &mdash; <a href="mailto:petergsimons@gmail.com">petergsimons@gmail.com</a> &mdash; <a href="https://www.linkedin.com/in/peter-simons-5b263abb/">LinkedIn</a></p>
-    </div><!--// footer -->
-
+          </div>
+    </div>
   </div><!-- // inner -->
-
-
 </div><!--// doc -->
-
 </body>
+
+
+<footer>
+  <div id="ft">
+    <p>
+      Peter Simons &mdash;
+      <a href="mailto:petergsimons@gmail.com">petergsimons@gmail.com</a> &mdash;
+      <a href="https://www.linkedin.com/in/peter-simons-5b263abb/">LinkedIn</a>
+    </p>
+  </div>
+</footer>

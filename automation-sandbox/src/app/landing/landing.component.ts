@@ -26,8 +26,4 @@ export class LandingComponent {
       alert('Error: Could not find CV content to download.');
     }
   }
-
-  navigateToCalculator() {
-    this.router.navigate(['/calculator']);
-  }
 }

@@ -1,4 +1,3 @@
-
 <div class="header-toolbar">
   <button class="button"
           (click)="navigateToLanding()"
@@ -9,6 +8,12 @@
           (click)="navigateToCalculator()"
           id="launch-calculator">
     Learn to Automate
+  </button>
+  <button *ngIf="showDownload"
+          class="button"
+          (click)="OnDownloadPdfClick()"
+          id="download-pdf">
+    Download CV
   </button>
 </div>
 

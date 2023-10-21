@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { LandingComponent } from './landing/landing.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { HeaderNavComponent } from './header-nav/header-nav.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     CalculatorComponent,
-    HeaderNavComponent
+    HeaderNavComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

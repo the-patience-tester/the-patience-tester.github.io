@@ -84,10 +84,7 @@ p.enlarge {
   padding-bottom: 1em;
 }
 .job h4 {
-  position: absolute;
-  top: 0.35em;
-  right: 0;
-  width:33.3%;
+  display: flex;
 }
 .job p {
   margin: 0.75em 0 3em 0;

@@ -1,5 +1,5 @@
 .button {
-  background-color: #333;
+  background-color: #11111f;
   color: #fff;
   border-radius: 10px;
   border: none;
@@ -9,11 +9,11 @@
   margin: 0 2% 0 0;
     &:hover {
       color: #333;
-      background-color: #96e194;
+      background-color: #84bd01;
     }
 }
 .header-toolbar {
-  background-color: #333;
+  background-color: #11111f;
   color: #fff;
   padding: 10px;
   display: flex;
@@ -36,12 +36,12 @@
   padding: 1% 0 5% 0;
   font-size: 92%;
   text-align: center;
-  background-color: #333;
+  background-color: #11111f;
   color: #fff;
   min-height: 100%; /* Minimum height to ensure the background extends to the bottom */
 }
 #ft a {
-  color: #96e194;
+  color: #84bd01;
 }
 
 /* Add a pseudo-element to fill remaining space if needed */

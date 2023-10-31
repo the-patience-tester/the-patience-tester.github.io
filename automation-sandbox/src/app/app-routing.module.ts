@@ -7,7 +7,7 @@ import { CalculatorComponent } from './calculator/calculator.component'
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: LandingComponent },
-  { path: 'calculator', component: CalculatorComponent }
+  { path: 'LearnToAutomate', component: CalculatorComponent }
   // Add more routes for other components if needed
 ]
 

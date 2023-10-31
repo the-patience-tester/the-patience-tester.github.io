@@ -18,7 +18,7 @@ export class HeaderNavComponent {
       if (event instanceof NavigationEnd) {
         const currentRoute = event.url
         console.log('Current Route: ', currentRoute)
-        if (currentRoute === '/calculator') {
+        if (currentRoute !== '/') {
           this.showDownload = false
         } else {
           this.showDownload = true
@@ -47,7 +47,7 @@ export class HeaderNavComponent {
   }
 
   async navigateToCalculator (): Promise<boolean> {
-    return await this.router.navigate(['/calculator'])
+    return await this.router.navigate(['/LearnToAutomate'])
   }
 
   async navigateToLanding (): Promise<boolean> {

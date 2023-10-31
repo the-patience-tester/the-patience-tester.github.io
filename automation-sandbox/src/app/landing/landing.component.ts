@@ -8,5 +8,5 @@ import { Router } from '@angular/router'
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent {
-  constructor(private readonly router: Router) {}
+  constructor (private readonly router: Router) {}
 }

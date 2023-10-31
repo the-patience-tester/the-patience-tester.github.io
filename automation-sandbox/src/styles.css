@@ -1,6 +1,11 @@
+:root {
+  --green: #84bd01;
+  --black: #11111f;
+}
+
 .button {
-  background-color: #11111f;
-  color: #fff;
+  background-color: var(--black);
+  color: white;
   border-radius: 10px;
   border: none;
   padding: 16px 16px 16px 16px;
@@ -8,27 +13,27 @@
   transition: background-color 0.4s ease;
   margin: 0 2% 0 0;
     &:hover {
-      color: #333;
-      background-color: #84bd01;
+      color: var(--black);
+      background-color: var(--green);
     }
 }
 .header-toolbar {
-  background-color: #11111f;
-  color: #fff;
+  background-color: var(--black);
+  color: white;
   padding: 10px;
   display: flex;
   max-height: 5%;
 }
 
 .para {
-  background-color: #f0f0f0;
+  background-color: white;
   border-radius: 10px;
   padding: 20px;
   margin: 10px 0;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
   font-size: 16px;
   line-height: 1.4;
-  color: #333;
+  color: var(--black);
 }
 
 .para a {
@@ -40,12 +45,12 @@
   padding: 1% 0 5% 0;
   font-size: 92%;
   text-align: center;
-  background-color: #11111f;
-  color: #fff;
+  background-color: var(--black);
+  color: white;
   min-height: 100%; /* Minimum height to ensure the background extends to the bottom */
 }
 #ft a {
-  color: #84bd01;
+  color: var(--green);
 }
 
 /* Add a pseudo-element to fill remaining space if needed */

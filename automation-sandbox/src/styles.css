@@ -31,6 +31,10 @@
   color: #333;
 }
 
+.para a {
+  color: #84bd01;
+}
+
 /* //-- footer -- */
 #ft {
   padding: 1% 0 5% 0;

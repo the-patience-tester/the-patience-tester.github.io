@@ -1,0 +1,15 @@
+body {
+    margin: 1% 1% 1% 1%;
+}
+
+.terminal {
+    display: inline-block;
+    box-sizing: border-box; /* Include padding and border within the element's width */
+    background-color: var(--black);
+    color: #00FF00; /* Green text */
+    font-family: monospace;
+    padding: 10px;
+    border: 1px solid #00FF00;
+    border-radius: 5px;
+  }
+  

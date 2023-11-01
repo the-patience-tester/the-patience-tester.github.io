@@ -1,4 +1,5 @@
 import { Component, type OnInit } from '@angular/core'
+import { CalculatorIds } from './calculator.component.ids'
 
 @Component({
   selector: 'app-calculator',
@@ -6,6 +7,7 @@ import { Component, type OnInit } from '@angular/core'
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
+  Ids: CalculatorIds = new CalculatorIds()
   input: string = ''
   result: string = ''
 

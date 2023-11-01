@@ -1,27 +1,48 @@
+<body>
 <div class="container-fluid">
 <div>
-  <h1 class="text-center">Learn to Automate</h1>
-  <h2>Getting started</h2>
+  <h2 class="text-lg-right">Welcome</h2>
   <p class="para">
-    I created this page with the intention of providing a basic static web app that people can write and run automation against
+    I created this page with the intention of providing a basic static web app that people can write and run automation against. <br>
+    However I apreciate if you're completely new to coding there are some tools you'll need to get/learn before you can jump in to writing code, these are as follows: <br><br>
+    • <a href="https://git-scm.com/">Git</a> This is a source code management tool, There are lot's of good resources to learn this online, personally I recomend looking at <a href="https://learngitbranching.js.org/">Learn Git branching</a> <br><br>
+    • <a href="https://code.visualstudio.com/">Visual Studio Code</a> This is an IDE(Integrated developer environment), basically a place where you can write code, there are various other tools online but I think it's fairly well established that this is the best free tool. <br>
   </p>
-</div>
+
+  <h2 class="text-lg-right">Getting started</h2>
+  <p class="para">
+    First things first you'll need to clone the source code of this SPA(Single page application) that is found <a href="https://github.com/the-patience-tester/the-patience-tester.github.io">here</a><br>
+    Once you have this you should navigate to the following directory: <br>
+    <span class="terminal">cd ~/repo/automation-sandbox</span> <br>
+    once there you should run <br>
+    <span class="terminal">npm install</span> <br>
+    Once that complete's you should be ready to run the UI Automation, to do this run the following <br>
+    <span class="terminal">ng e2e</span> <br>
+    If that's succeeded you should have a list of test results output
+  </p>
+
+  <h2 class="text-lg-right">Writing a test</h2>
+  <p class="para">
+    The tests are stored in the "e2e" folder next to the "src" folder
+  </p>
+  </div>
+
   <div class="jumbotron col-sm-4 p-2 m-0 bg-inverse">
 
-    <h1 class="text-center">Angular Calculator</h1>
+    <h1 class="text-lg-right">Automation Calculator</h1>
 
     User Input:
     <div class="input-group input-group-sm col-sm-12 m-0 p-0">
-      <div class="col-sm-12 form-control text-lg-right" type="text">{{input}}</div>
+      <div class="col-sm-12 form-control text-lg-right" type="text" [id]="Ids.input">{{input}}</div>
     </div>
 
     Results:
     <div class="input-group input-group-sm col-sm-12 m-0 p-0">
-      <div class="form-control text-sm-right" type="text">{{result}}</div>
+      <div class="form-control text-sm-right" type="text" [id]="Ids.result" >{{result}}</div>
     </div>
 
     <div class="col-sm-12 p-1 m-0">
-      <button class="btn btn-info col-sm-6" type="button" (click)="allClear()">C</button>
+      <button [id]="Ids.clear" class="btn btn-info col-sm-6" type="button" (click)="allClear()">C</button>
       <button class="btn btn-warning col-sm-3" type="button" (click)="clear()">x</button>
       <button class="btn btn-secondary col-sm-3" type="button" (click)="pressOperator('/')">/</button>
     </div>
@@ -52,3 +73,4 @@
 
   </div>
 </div>
+</body>

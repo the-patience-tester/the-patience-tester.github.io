@@ -1,18 +1,18 @@
 <div class="header-toolbar">
   <button class="button"
           (click)="navigateToLanding()"
-          id="CV">
+          [id]="Ids.home">
     Home
   </button>
   <button class="button"
           (click)="navigateToCalculator()"
-          id="launch-calculator">
+          [id]="Ids.automation">
     Learn to Automate
   </button>
   <button *ngIf="showDownload"
           class="button"
           (click)="OnDownloadPdfClick()"
-          id="download-pdf">
+          [id]="Ids.downloadCv">
     Download CV
   </button>
   <div class="icon-container">

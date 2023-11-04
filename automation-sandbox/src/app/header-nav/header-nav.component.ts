@@ -3,6 +3,7 @@ import { Component } from '@angular/core'
 import { NavigationEnd, Router } from '@angular/router'
 import * as jsPDF from 'jspdf'
 import html2canvas from 'html2canvas'
+import { HeaderIds } from './header-nav.component.ids'
 
 @Component({
   selector: 'app-header-nav',
@@ -11,6 +12,7 @@ import html2canvas from 'html2canvas'
 })
 export class HeaderNavComponent {
   showDownload: boolean = true
+  Ids: HeaderIds = new HeaderIds()
   constructor (private readonly router: Router) {}
   /// This is being used indirectly to determine if the download button should be shown.
   ngOnInit (): void {

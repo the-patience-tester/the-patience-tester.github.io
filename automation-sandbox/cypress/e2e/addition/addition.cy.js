@@ -8,6 +8,7 @@ describe('template spec', () => {
 
   it('adds 2 numbers', () => {
     helper.click('learnToAutomate')
+    helper.click('continue')
     cy.get('[id=calcContainer]').scrollTo('bottom', { ensureScrollable: false })
     helper.click('7')
     helper.click('+')

@@ -7,6 +7,7 @@ import { CalculatorIds } from './calculator.component.ids'
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
+  isPopupVisible: boolean = true
   Ids: CalculatorIds = new CalculatorIds()
   input: string = ''
   result: string = ''

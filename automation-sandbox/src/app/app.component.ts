@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core'
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private router: Router) {}
+  [title: string]: any
+  constructor (private readonly router: Router) {}
 }

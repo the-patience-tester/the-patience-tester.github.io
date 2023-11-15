@@ -1,4 +1,4 @@
-<app-under-construction [isPopupVisible]="isPopupVisible"></app-under-construction>
+<app-under-construction *ngIf="isPopupVisible"></app-under-construction>
 <body>
 <div class="container-fluid">
 <div>
@@ -31,7 +31,7 @@
   </p>
   </div>
 
-  <div [id]="Ids.calculatorContainer" class="jumbotron col-sm-4 p-2 m-0 bg-inverse">
+  <div [id]="Ids.calculatorContainer" class="card col-sm-4 p-2 m-0 bg-inverse">
 
     <h1 class="text-lg-right">Automation Calculator</h1>
 

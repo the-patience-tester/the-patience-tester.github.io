@@ -1,14 +1,61 @@
-.button {
-  background-color: #007bff; /* Button background color */
-  color: #fff; /* Button text color */
-  border: none; /* Remove button borders */
-  border-radius: 4px; /* Add some border radius for a rounded look */
-  padding: 8px 16px; /* Add padding to the buttons */
-  cursor: pointer; /* Show a pointer cursor on hover */
-  transition: background-color 0.3s ease; /* Smooth transition for background color on hover */
+:root {
+  --green: #84bd01;
+  --black: #11111f;
+}
 
-  /* Style for hover state */
-  &:hover {
-    background-color: #0056b3; /* Darker background color on hover */
-  }
-}/* You can add global styles to this file, and also import other style files */
+.button {
+  background-color: var(--black);
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 16px 16px 16px 16px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+  margin: 0 2% 0 0;
+    &:hover {
+      color: var(--black);
+      background-color: var(--green);
+    }
+}
+.header-toolbar {
+  background-color: var(--black);
+  color: white;
+  padding: 10px;
+  display: flex;
+  max-height: 5%;
+}
+
+.para {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px 0;
+  box-shadow: 3px 3px 3px 5px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--black);
+}
+
+.para a {
+  color: #84bd01;
+}
+
+/* //-- footer -- */
+#ft {
+  padding: 1% 0 5% 0;
+  font-size: 92%;
+  text-align: center;
+  background-color: var(--black);
+  color: white;
+  min-height: 100%; /* Minimum height to ensure the background extends to the bottom */
+}
+#ft a {
+  color: var(--green);
+}
+
+/* Add a pseudo-element to fill remaining space if needed */
+#ft:after {
+  content: "";
+  display: block;
+  height: 100%; /* Fill the remaining space to the bottom */
+}

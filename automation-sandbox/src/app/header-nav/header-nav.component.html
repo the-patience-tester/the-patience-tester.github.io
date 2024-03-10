@@ -1,0 +1,22 @@
+<div class="header-toolbar">
+  <button class="button"
+          (click)="navigateToLanding()"
+          [id]="Ids.home">
+    Home
+  </button>
+  <button class="button"
+          (click)="navigateToCalculator()"
+          [id]="Ids.automation">
+    Learn to Automate
+  </button>
+  <button *ngIf="showDownload"
+          class="button"
+          (click)="OnDownloadPdfClick()"
+          [id]="Ids.downloadCv">
+    Download CV
+  </button>
+  <div class="icon-container">
+    <img class="img-size" src="assets/PSQA.png" alt="Icon">
+  </div>
+</div>
+

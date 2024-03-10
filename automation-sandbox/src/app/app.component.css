@@ -1,0 +1,17 @@
+/* //-- footer -- */
+#ft {
+  padding: 1% 0 5% 0;
+  font-size: 92%;
+  text-align: center;
+  background-color: var(--black);
+  color: white;
+  min-height: 100%; /* Minimum height to ensure the background extends to the bottom */
+}
+#ft a {
+  color: var(--green);
+}
+
+/* Add a pseudo-element to fill remaining space if needed */
+#ft:after {
+  content: "";
+}

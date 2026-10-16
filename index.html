@@ -1,0 +1,757 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Peter Simons - Technical Engineering Manager and Product Engineering leader.">
+  <title>Peter Simons | Technical Engineering Manager</title>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --green: #28634b;
+      --green-dark: #194735;
+      --green-pale: #eaf2ed;
+      --ink: #17231e;
+      --muted: #59665f;
+      --line: #dce5df;
+      --background: #f3f6f4;
+      --white: #ffffff;
+      --hero-start: #edf5ef;
+      --hero-end: #ffffff;
+      --profile: #3f4d45;
+      --strength-background: #f7faf8;
+      --job-divider: #e8eeea;
+      --list-text: #39473f;
+      --footer-background: #f7faf8;
+      --shadow: rgba(24, 48, 36, 0.08);
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --green: #91cdaa;
+      --green-dark: #b5e1c8;
+      --green-pale: #293d32;
+      --ink: #e7eee9;
+      --muted: #b4c0b8;
+      --line: #35473c;
+      --background: #151b17;
+      --white: #202923;
+      --hero-start: #213429;
+      --hero-end: #202923;
+      --profile: #c1ccc4;
+      --strength-background: #26332b;
+      --job-divider: #334138;
+      --list-text: #c4cfc7;
+      --footer-background: #1a231d;
+      --shadow: rgba(0, 0, 0, 0.22);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        color-scheme: dark;
+        --green: #91cdaa;
+        --green-dark: #b5e1c8;
+        --green-pale: #293d32;
+        --ink: #e7eee9;
+        --muted: #b4c0b8;
+        --line: #35473c;
+        --background: #151b17;
+        --white: #202923;
+        --hero-start: #213429;
+        --hero-end: #202923;
+        --profile: #c1ccc4;
+        --strength-background: #26332b;
+        --job-divider: #334138;
+        --list-text: #c4cfc7;
+        --footer-background: #1a231d;
+        --shadow: rgba(0, 0, 0, 0.22);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .page {
+      width: min(100% - 32px, 960px);
+      margin: 38px auto;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-bottom: 16px;
+    }
+
+    .theme-toggle {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      place-items: center;
+      background: var(--white);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--green);
+    }
+
+    .theme-toggle:focus-visible {
+      outline: 3px solid var(--green);
+      outline-offset: 2px;
+    }
+
+    .theme-icon {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.8;
+    }
+
+    .theme-icon--moon {
+      display: none;
+    }
+
+    .theme-toggle[aria-pressed="true"] .theme-icon--sun {
+      display: none;
+    }
+
+    .theme-toggle[aria-pressed="true"] .theme-icon--moon {
+      display: block;
+    }
+
+    .download {
+      display: inline-block;
+      padding: 12px 20px;
+      background: var(--green);
+      color: white;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .download:hover {
+      background: var(--green-dark);
+    }
+
+    .cv {
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 16px 48px var(--shadow);
+    }
+
+    .hero {
+      padding: 48px 54px 38px;
+      background: linear-gradient(120deg, var(--hero-start), var(--hero-end) 75%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--green);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .headline {
+      margin: 12px 0 22px;
+      color: var(--green);
+      font-size: 1.3rem;
+      font-weight: 650;
+    }
+
+    .profile {
+      max-width: 790px;
+      margin: 0;
+      color: var(--profile);
+    }
+
+    .content {
+      padding: 36px 54px 48px;
+    }
+
+    .section {
+      margin-top: 36px;
+    }
+
+    .section:first-child {
+      margin-top: 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 20px;
+      color: var(--green-dark);
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .strengths {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .strength {
+      padding: 17px;
+      background: var(--strength-background);
+      border: 1px solid var(--line);
+      border-radius: 9px;
+    }
+
+    .strength h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .strength p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .job {
+      margin-bottom: 28px;
+      padding-bottom: 26px;
+      border-bottom: 1px solid var(--job-divider);
+      break-inside: avoid;
+    }
+
+    .job:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .job-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 12px;
+    }
+
+    .job h3 {
+      margin: 0;
+      font-size: 1.15rem;
+      line-height: 1.4;
+    }
+
+    .company {
+      margin: 4px 0 0;
+      color: var(--green);
+      font-weight: 650;
+    }
+
+    .dates {
+      flex-shrink: 0;
+      padding: 4px 9px;
+      background: var(--green-pale);
+      color: var(--green-dark);
+      border-radius: 5px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .job ul {
+      margin: 12px 0 0;
+      padding-left: 22px;
+    }
+
+    .job li {
+      margin-bottom: 8px;
+      padding-left: 3px;
+      color: var(--list-text);
+    }
+
+    .job li::marker {
+      color: var(--green);
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .skill-group h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .skill-group p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .footer {
+      padding: 20px;
+      background: var(--footer-background);
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        width: calc(100% - 20px);
+        margin: 12px auto;
+      }
+
+      .hero {
+        padding: 32px 24px;
+      }
+
+      .content {
+        padding: 28px 24px 36px;
+      }
+
+      .strengths,
+      .skills {
+        grid-template-columns: 1fr;
+      }
+
+      .job-heading {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .dates {
+        white-space: normal;
+      }
+    }
+
+    @media print {
+      :root {
+        color-scheme: light;
+        --green: #28634b;
+        --green-dark: #194735;
+        --green-pale: #eaf2ed;
+        --ink: #17231e;
+        --muted: #59665f;
+        --line: #dce5df;
+        --background: #f3f6f4;
+        --white: #ffffff;
+        --hero-start: #edf5ef;
+        --hero-end: #ffffff;
+        --profile: #3f4d45;
+        --strength-background: #f7faf8;
+        --job-divider: #e8eeea;
+        --list-text: #39473f;
+        --footer-background: #f7faf8;
+        --shadow: rgba(24, 48, 36, 0.08);
+      }
+
+      @page {
+        size: A4;
+        margin: 14mm;
+      }
+
+      body {
+        background: white;
+        font-size: 10pt;
+      }
+
+      .page {
+        width: 100%;
+        margin: 0;
+      }
+
+      .toolbar {
+        display: none;
+      }
+
+      .cv {
+        overflow: visible;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .hero {
+        padding: 0 0 20px;
+        background: white;
+      }
+
+      .content {
+        padding: 24px 0 0;
+      }
+
+      .section {
+        margin-top: 24px;
+      }
+
+      .job {
+        margin-bottom: 18px;
+        padding-bottom: 16px;
+      }
+
+      .strength {
+        padding: 10px;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light" || savedTheme === "dark") {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    } catch (error) {
+      console.warn("Unable to read the saved theme preference.", error);
+    }
+  </script>
+</head>
+
+<body>
+  <main class="page">
+
+    <div class="toolbar">
+      <a class="download" href="cv.pdf" download="Peter-Simons-CV.pdf">
+        ↓ Download CV (PDF)
+      </a>
+      <button class="theme-toggle" type="button" aria-pressed="false"
+        aria-label="Switch to dark mode" title="Switch to dark mode">
+        <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24"
+          aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+        </svg>
+        <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24"
+          aria-hidden="true" focusable="false">
+          <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
+        </svg>
+      </button>
+    </div>
+
+    <article class="cv">
+
+      <header class="hero">
+        <p class="eyebrow">Curriculum Vitae</p>
+
+        <h1>Peter Simons</h1>
+
+        <p class="headline">
+          Technical Engineering Manager | Product Engineering
+        </p>
+
+        <p class="profile">
+          Technical engineering leader with a background spanning software
+          development, quality engineering and product delivery. Experienced
+          in leading engineering initiatives across multiple teams, establishing
+          scalable testing practices and delivering complex healthcare software.
+          Combines strong technical judgement with a pragmatic approach to
+          delivery, including multi-agent AI coding workflows that significantly
+          increase engineering output without compromising quality.
+        </p>
+      </header>
+
+      <div class="content">
+
+        <section class="section">
+          <h2 class="section-title">Core strengths</h2>
+
+          <div class="strengths">
+            <div class="strength">
+              <h3>Engineering leadership</h3>
+              <p>
+                Technical direction, engineering standards, team leadership
+                and pragmatic decision-making.
+              </p>
+            </div>
+
+            <div class="strength">
+              <h3>Product delivery</h3>
+              <p>
+                Turning complex requirements into working software, with a
+                focus on outcomes and quality.
+              </p>
+            </div>
+
+            <div class="strength">
+              <h3>AI-assisted engineering</h3>
+              <p>
+                Multi-agent coding workflows that increase delivery capacity
+                while preserving quality.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Professional experience</h2>
+
+          <article class="job">
+            <div class="job-heading">
+              <div>
+                <h3>Engineering Manager</h3>
+                <p class="company">Enlivios Health | MDT Application</p>
+              </div>
+              <span class="dates">April 2025 – Present</span>
+            </div>
+
+            <ul>
+              <li>
+                Led rapid-delivery engineering projects outside the
+                organisation's usual delivery constraints, building on the
+                successful establishment of testing processes for EMIS-X GP.
+              </li>
+              <li>
+                Helped evolve this work into the MDT application, contributing
+                to technical decisions, architecture, backlog refinement and
+                product delivery.
+              </li>
+              <li>
+                Lead a collaborative engineering team focused on delivering
+                working software quickly while maintaining high engineering
+                standards.
+              </li>
+              <li>
+                Introduced multi-agent AI coding workflows that doubled
+                development output without compromising quality.
+              </li>
+              <li>
+                Driving delivery towards the MDT application's planned market
+                launch in December 2026.
+              </li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-heading">
+              <div>
+                <h3>Head of Testing</h3>
+                <p class="company">Enlivios Health | EMIS-X GP</p>
+              </div>
+              <span class="dates">November 2023 – April 2025</span>
+            </div>
+
+            <ul>
+              <li>
+                Created and implemented a test strategy across 14 engineering
+                teams, establishing consistent approaches to automated testing
+                and quality assurance.
+              </li>
+              <li>
+                Built a shared API automation framework and supported teams
+                in migrating their services to the standardised approach.
+              </li>
+              <li>
+                Standardised automated test reporting across unit, API and
+                Playwright UI test suites, providing consistent evidence for
+                assurance and audit.
+              </li>
+              <li>
+                Established a non-functional testing strategy covering
+                accessibility and performance. Selected axe for accessibility
+                testing and integrated it into the UI suite, and selected k6
+                and supported its adoption for performance testing.
+              </li>
+              <li>
+                Secured NHS sign-off of testing processes and supported
+                EMIS-X GP achieving TIF certification.
+              </li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-heading">
+              <div>
+                <h3>Staff Automation / Quality Engineering (Technical Test Lead)</h3>
+                <p class="company">N-able</p>
+              </div>
+              <span class="dates">June 2022 – November 2023</span>
+            </div>
+
+            <ul>
+              <li>
+                Led automation and quality engineering initiatives, improving
+                test strategy, framework adoption and consistency across
+                engineering teams.
+              </li>
+              <li>
+                Worked with developers and technical stakeholders to strengthen
+                automated coverage and improve quality feedback in delivery
+                pipelines.
+              </li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-heading">
+              <div>
+                <h3>Senior Software Developer</h3>
+                <p class="company">N-able</p>
+              </div>
+              <span class="dates">April 2021 – June 2022</span>
+            </div>
+
+            <ul>
+              <li>
+                Developed and maintained software services, contributing to
+                technical design, implementation and code quality.
+              </li>
+              <li>
+                Worked across development and testing to improve reliability
+                and support effective delivery.
+              </li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-heading">
+              <div>
+                <h3>Product Owner</h3>
+                <p class="company">SolarWinds MSP / N-able</p>
+              </div>
+              <span class="dates">October 2020 – April 2021</span>
+            </div>
+
+            <ul>
+              <li>
+                Prioritised product work and aligned engineering delivery
+                with customer needs and business goals.
+              </li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-heading">
+              <div>
+                <h3>Senior Test Engineer &amp; Scrum Master</h3>
+                <p class="company">SolarWinds MSP</p>
+              </div>
+              <span class="dates">February 2017 – October 2020</span>
+            </div>
+
+            <ul>
+              <li>
+                Combined hands-on test engineering with facilitation of team
+                delivery and continuous improvement.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Technical skills</h2>
+
+          <div class="skills">
+            <div class="skill-group">
+              <h3>Development</h3>
+              <p>
+                C#, .NET, ASP.NET, REST APIs, MediatR, Entity Framework, SQL
+              </p>
+            </div>
+
+            <div class="skill-group">
+              <h3>Quality engineering</h3>
+              <p>
+                API and UI automation, Playwright, Refit, xUnit, NUnit,
+                FluentAssertions, axe, k6, JMeter
+              </p>
+            </div>
+
+            <div class="skill-group">
+              <h3>Platforms &amp; delivery</h3>
+              <p>
+                AWS, Docker, Kubernetes, GitHub Actions, Azure DevOps,
+                CI/CD, MySQL, Postman, Allure
+              </p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <footer class="footer">
+        <a href="mailto:petergsimons@gmail.com">Peter Simons</a> · <a href="https://www.linkedin.com/in/peter-simons-5b263abb">LinkedIn</a> · <a href="https://github.com/the-patience-tester">GitHub</a>
+      </footer>
+
+    </article>
+  </main>
+  <script>
+    const themeToggle = document.querySelector(".theme-toggle");
+    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+    function updateThemeToggle(theme) {
+      const isDark = theme === "dark";
+      themeToggle.setAttribute("aria-pressed", String(isDark));
+      const label = isDark ? "Switch to light mode" : "Switch to dark mode";
+      themeToggle.setAttribute("aria-label", label);
+      themeToggle.title = label;
+    }
+
+    const initialTheme = document.documentElement.dataset.theme
+      || (systemPrefersDark.matches ? "dark" : "light");
+    updateThemeToggle(initialTheme);
+
+    themeToggle.addEventListener("click", () => {
+      const currentTheme = document.documentElement.dataset.theme
+        || (systemPrefersDark.matches ? "dark" : "light");
+      const nextTheme = currentTheme === "dark" ? "light" : "dark";
+      document.documentElement.dataset.theme = nextTheme;
+      updateThemeToggle(nextTheme);
+
+      try {
+        localStorage.setItem("theme", nextTheme);
+      } catch (error) {
+        console.warn("Unable to save the theme preference.", error);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -4,12 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Peter Simons - Technical Engineering Manager and Product Engineering leader.">
+  <meta name="description" content="Peter Simons - Technical Engineering Manager, software delivery and engineering leadership.">
   <title>Peter Simons | Technical Engineering Manager</title>
 
   <style>
     :root {
-      color-scheme: light;
       --green: #28634b;
       --green-dark: #194735;
       --green-pale: #eaf2ed;
@@ -23,9 +22,12 @@
       --profile: #3f4d45;
       --strength-background: #f7faf8;
       --job-divider: #e8eeea;
-      --list-text: #39473f;
+      --body-copy: #39473f;
       --footer-background: #f7faf8;
       --shadow: rgba(24, 48, 36, 0.08);
+      --download-background: #28634b;
+      --download-hover: #194735;
+      --download-text: #ffffff;
     }
 
     :root[data-theme="dark"] {
@@ -43,9 +45,12 @@
       --profile: #c1ccc4;
       --strength-background: #26332b;
       --job-divider: #334138;
-      --list-text: #c4cfc7;
+      --body-copy: #c4cfc7;
       --footer-background: #1a231d;
       --shadow: rgba(0, 0, 0, 0.22);
+      --download-background: #28634b;
+      --download-hover: #194735;
+      --download-text: #ffffff;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -64,27 +69,30 @@
         --profile: #c1ccc4;
         --strength-background: #26332b;
         --job-divider: #334138;
-        --list-text: #c4cfc7;
+        --body-copy: #c4cfc7;
         --footer-background: #1a231d;
         --shadow: rgba(0, 0, 0, 0.22);
+        --download-background: #28634b;
+        --download-hover: #194735;
+        --download-text: #ffffff;
       }
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       background: var(--background);
       color: var(--ink);
       font-family: "Segoe UI", Arial, sans-serif;
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.6;
     }
 
+    a { color: var(--green); }
+
     .page {
-      width: min(100% - 32px, 960px);
+      width: min(100% - 32px, 1000px);
       margin: 38px auto;
     }
 
@@ -109,9 +117,7 @@
       cursor: pointer;
     }
 
-    .theme-toggle:hover {
-      border-color: var(--green);
-    }
+    .theme-toggle:hover { border-color: var(--green); }
 
     .theme-toggle:focus-visible {
       outline: 3px solid var(--green);
@@ -128,32 +134,22 @@
       stroke-width: 1.8;
     }
 
-    .theme-icon--moon {
-      display: none;
-    }
+    .theme-icon--moon { display: none; }
 
-    .theme-toggle[aria-pressed="true"] .theme-icon--sun {
-      display: none;
-    }
-
-    .theme-toggle[aria-pressed="true"] .theme-icon--moon {
-      display: block;
-    }
+    .theme-toggle[aria-pressed="true"] .theme-icon--sun { display: none; }
+    .theme-toggle[aria-pressed="true"] .theme-icon--moon { display: block; }
 
     .download {
       display: inline-block;
-      padding: 12px 20px;
-      background: var(--green);
-      color: white;
-      border-radius: 8px;
+      padding: 11px 18px;
+      background: var(--download-background);
+      color: var(--download-text);
+      border-radius: 7px;
       font-weight: 700;
       text-decoration: none;
-      transition: background 0.2s;
     }
 
-    .download:hover {
-      background: var(--green-dark);
-    }
+    .download:hover { background: var(--download-hover); }
 
     .cv {
       overflow: hidden;
@@ -164,7 +160,7 @@
     }
 
     .hero {
-      padding: 48px 54px 38px;
+      padding: 46px 54px 38px;
       background: linear-gradient(120deg, var(--hero-start), var(--hero-end) 75%);
       border-bottom: 1px solid var(--line);
     }
@@ -172,9 +168,9 @@
     .eyebrow {
       margin: 0 0 10px;
       color: var(--green);
-      font-size: 0.76rem;
+      font-size: .76rem;
       font-weight: 800;
-      letter-spacing: 0.15em;
+      letter-spacing: .15em;
       text-transform: uppercase;
     }
 
@@ -182,33 +178,40 @@
       margin: 0;
       font-size: clamp(2.2rem, 5vw, 3.4rem);
       line-height: 1.1;
-      letter-spacing: -0.04em;
+      letter-spacing: -.04em;
     }
 
     .headline {
-      margin: 12px 0 22px;
+      margin: 12px 0 18px;
       color: var(--green);
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: 650;
     }
 
-    .profile {
-      max-width: 790px;
-      margin: 0;
-      color: var(--profile);
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      margin-bottom: 20px;
+      font-size: .92rem;
     }
 
-    .content {
-      padding: 36px 54px 48px;
+    .profile {
+      max-width: 840px;
+      margin: 0;
+      color: var(--profile);
+      font-size: 1rem;
+      line-height: 1.75;
     }
+
+    .content { padding: 36px 54px 46px; }
 
     .section {
       margin-top: 36px;
+      scroll-margin-top: 20px;
     }
 
-    .section:first-child {
-      margin-top: 0;
-    }
+    .section:first-child { margin-top: 0; }
 
     .section-title {
       display: flex;
@@ -216,9 +219,9 @@
       gap: 14px;
       margin: 0 0 20px;
       color: var(--green-dark);
-      font-size: 0.9rem;
+      font-size: .9rem;
       font-weight: 800;
-      letter-spacing: 0.13em;
+      letter-spacing: .13em;
       text-transform: uppercase;
     }
 
@@ -243,19 +246,19 @@
     }
 
     .strength h3 {
-      margin: 0 0 6px;
+      margin: 0 0 7px;
       font-size: 1rem;
     }
 
     .strength p {
       margin: 0;
       color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.5;
+      font-size: .9rem;
+      line-height: 1.55;
     }
 
     .job {
-      margin-bottom: 28px;
+      margin-bottom: 30px;
       padding-bottom: 26px;
       border-bottom: 1px solid var(--job-divider);
       break-inside: avoid;
@@ -277,7 +280,7 @@
 
     .job h3 {
       margin: 0;
-      font-size: 1.15rem;
+      font-size: 1.13rem;
       line-height: 1.4;
     }
 
@@ -293,9 +296,14 @@
       background: var(--green-pale);
       color: var(--green-dark);
       border-radius: 5px;
-      font-size: 0.82rem;
+      font-size: .82rem;
       font-weight: 700;
       white-space: nowrap;
+    }
+
+    .job p {
+      margin: 10px 0;
+      color: var(--body-copy);
     }
 
     .job ul {
@@ -306,12 +314,10 @@
     .job li {
       margin-bottom: 8px;
       padding-left: 3px;
-      color: var(--list-text);
+      color: var(--body-copy);
     }
 
-    .job li::marker {
-      color: var(--green);
-    }
+    .job li::marker { color: var(--green); }
 
     .skills {
       display: grid;
@@ -327,8 +333,8 @@
     .skill-group p {
       margin: 0;
       color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.7;
+      font-size: .92rem;
+      line-height: 1.8;
     }
 
     .footer {
@@ -336,7 +342,7 @@
       background: var(--footer-background);
       border-top: 1px solid var(--line);
       color: var(--muted);
-      font-size: 0.85rem;
+      font-size: .85rem;
       text-align: center;
     }
 
@@ -346,31 +352,24 @@
         margin: 12px auto;
       }
 
-      .hero {
-        padding: 32px 24px;
-      }
+      .hero { padding: 30px 24px; }
+      .content { padding: 28px 24px 34px; }
 
-      .content {
-        padding: 28px 24px 36px;
-      }
-
-      .strengths,
-      .skills {
-        grid-template-columns: 1fr;
-      }
+      .strengths, .skills { grid-template-columns: 1fr; }
 
       .job-heading {
         flex-direction: column;
         gap: 8px;
       }
 
-      .dates {
-        white-space: normal;
-      }
+      .dates { white-space: normal; }
     }
 
     @media print {
-      :root {
+      @page { size: A4; margin: 14mm; }
+
+      :root[data-theme],
+      :root:not([data-theme]) {
         color-scheme: light;
         --green: #28634b;
         --green-dark: #194735;
@@ -385,29 +384,18 @@
         --profile: #3f4d45;
         --strength-background: #f7faf8;
         --job-divider: #e8eeea;
-        --list-text: #39473f;
+        --body-copy: #39473f;
         --footer-background: #f7faf8;
         --shadow: rgba(24, 48, 36, 0.08);
+        --download-background: #28634b;
+        --download-hover: #194735;
+        --download-text: #ffffff;
       }
 
-      @page {
-        size: A4;
-        margin: 14mm;
-      }
+      body { background: white; font-size: 10pt; }
 
-      body {
-        background: white;
-        font-size: 10pt;
-      }
-
-      .page {
-        width: 100%;
-        margin: 0;
-      }
-
-      .toolbar {
-        display: none;
-      }
+      .page { width: 100%; margin: 0; }
+      .toolbar { display: none; }
 
       .cv {
         overflow: visible;
@@ -421,22 +409,15 @@
         background: white;
       }
 
-      .content {
-        padding: 24px 0 0;
+      .content { padding: 24px 0 0; }
+      .section { margin-top: 24px; }
+      .section-title {
+        break-after: avoid;
+        page-break-after: avoid;
       }
 
-      .section {
-        margin-top: 24px;
-      }
-
-      .job {
-        margin-bottom: 18px;
-        padding-bottom: 16px;
-      }
-
-      .strength {
-        padding: 10px;
-      }
+      .job { margin-bottom: 18px; padding-bottom: 16px; }
+      .strength { padding: 10px; }
 
       * {
         -webkit-print-color-adjust: exact;
@@ -458,10 +439,9 @@
 
 <body>
   <main class="page">
-
     <div class="toolbar">
       <a class="download" href="cv.pdf" download="Peter-Simons-CV.pdf">
-        ↓ Download CV (PDF)
+        Download CV
       </a>
       <button class="theme-toggle" type="button" aria-pressed="false"
         aria-label="Switch to dark mode" title="Switch to dark mode">
@@ -478,24 +458,28 @@
     </div>
 
     <article class="cv">
-
       <header class="hero">
         <p class="eyebrow">Curriculum Vitae</p>
-
         <h1>Peter Simons</h1>
+        <p class="headline">Technical Engineering Manager | Product Engineering</p>
 
-        <p class="headline">
-          Technical Engineering Manager | Product Engineering
-        </p>
+        <div class="contact">
+          <a href="mailto:petergsimons@gmail.com">petergsimons@gmail.com</a>
+          <a href="https://www.linkedin.com/in/peter-simons-5b263abb/">LinkedIn</a>
+          <a href="https://github.com/the-patience-tester">GitHub</a>
+        </div>
 
         <p class="profile">
-          Technical engineering leader with a background spanning software
-          development, quality engineering and product delivery. Experienced
-          in leading engineering initiatives across multiple teams, establishing
-          scalable testing practices and delivering complex healthcare software.
-          Combines strong technical judgement with a pragmatic approach to
-          delivery, including multi-agent AI coding workflows that significantly
-          increase engineering output without compromising quality.
+          Technical engineering leader with experience spanning software
+          development, quality engineering, product ownership and engineering
+          management. I combine hands-on technical knowledge with the ability
+          to set direction, make architectural decisions and help teams turn
+          ideas into working products. My experience includes establishing
+          engineering standards across 14 teams, delivering healthcare software
+          through complex assurance requirements, and leading rapid product
+          development. I remain technically involved where it helps the team
+          deliver, with a particular interest in using AI-assisted development
+          to improve engineering throughput without compromising quality.
         </p>
       </header>
 
@@ -506,26 +490,26 @@
 
           <div class="strengths">
             <div class="strength">
-              <h3>Engineering leadership</h3>
+              <h3>Technical leadership</h3>
               <p>
-                Technical direction, engineering standards, team leadership
-                and pragmatic decision-making.
+                Architecture, technical reviews, engineering standards,
+                mentoring and sound decision-making.
               </p>
             </div>
 
             <div class="strength">
-              <h3>Product delivery</h3>
+              <h3>End-to-end delivery</h3>
               <p>
-                Turning complex requirements into working software, with a
-                focus on outcomes and quality.
+                Turning early ideas into prioritised backlogs, working software
+                and products that respond to customer feedback.
               </p>
             </div>
 
             <div class="strength">
-              <h3>AI-assisted engineering</h3>
+              <h3>Engineering effectiveness</h3>
               <p>
-                Multi-agent coding workflows that increase delivery capacity
-                while preserving quality.
+                Improving quality, automation and delivery workflows, including
+                practical adoption of AI coding assistants.
               </p>
             </div>
           </div>
@@ -543,29 +527,44 @@
               <span class="dates">April 2025 – Present</span>
             </div>
 
+            <p>
+              Asked to lead rapid-delivery projects following the successful
+              establishment of testing processes for EMIS-X GP. This work
+              evolved into the MDT application, built with fewer of the
+              traditional organisational hand-offs that can slow product
+              development.
+            </p>
+
             <ul>
               <li>
-                Led rapid-delivery engineering projects outside the
-                organisation's usual delivery constraints, building on the
-                successful establishment of testing processes for EMIS-X GP.
+                Lead a team of three permanent engineers and five contractors, combining engineering management with 
+                backlog ownership, solution design, active development, and code reviews.
               </li>
               <li>
-                Helped evolve this work into the MDT application, contributing
-                to technical decisions, architecture, backlog refinement and
-                product delivery.
+                Through personally developed planning strategies converted an initial set of ideas 
+                into actionable prioritised and phased backlogs,
+                working with the team to refine requirements, make technical
+                decisions and deliver iteratively.
               </li>
               <li>
-                Lead a collaborative engineering team focused on delivering
-                working software quickly while maintaining high engineering
-                standards.
+                Make architectural decisions collaboratively with
+                engineers, taking responsibility for the technical direction
+                while maintaining shared ownership within the team.
               </li>
               <li>
-                Introduced multi-agent AI coding workflows that doubled
-                development output without compromising quality.
+                Helped the team adopt multi-agent AI coding workflows,
+                doubling development output without compromising quality.
               </li>
               <li>
-                Driving delivery towards the MDT application's planned market
-                launch in December 2026.
+                Supported the product from early-stage development towards
+                its planned December 2026 market launch, including team-led
+                design work using wireframes and the company's UI component
+                library.
+              </li>
+              <li>
+                Established delivery practices that allow the team to make
+                progress independently, with clear direction and shared
+                understanding of the product vision.
               </li>
             </ul>
           </article>
@@ -579,30 +578,44 @@
               <span class="dates">November 2023 – April 2025</span>
             </div>
 
+            <p>
+              Responsible for defining and implementing a test strategy across
+              14 engineering teams developing EMIS-X GP, establishing
+              consistent automated testing and non-functional testing
+              practices across the programme.
+            </p>
+
             <ul>
               <li>
-                Created and implemented a test strategy across 14 engineering
-                teams, establishing consistent approaches to automated testing
-                and quality assurance.
+                Reviewed the existing application and service repositories,
+                identified gaps in testing practices and developed a strategy
+                with input from Clinical Safety, Technical Directors, Product,
+                Security and Engineering.
               </li>
               <li>
-                Built a shared API automation framework and supported teams
-                in migrating their services to the standardised approach.
+                Designed and built a shared C# API automation framework,
+                then supported engineering teams in adopting the framework
+                and migrating their service test suites.
               </li>
               <li>
                 Standardised automated test reporting across unit, API and
-                Playwright UI test suites, providing consistent evidence for
-                assurance and audit.
+                Playwright UI suites, improving consistency of evidence for
+                release management, audit and clinical assurance.
               </li>
               <li>
-                Established a non-functional testing strategy covering
-                accessibility and performance. Selected axe for accessibility
-                testing and integrated it into the UI suite, and selected k6
-                and supported its adoption for performance testing.
+                Created a non-functional testing strategy covering
+                accessibility and performance. Selected axe and integrated
+                accessibility checks into the existing UI suite; selected
+                k6 and helped teams learn and adopt performance testing.
               </li>
               <li>
-                Secured NHS sign-off of testing processes and supported
-                EMIS-X GP achieving TIF certification.
+                Helped establish reusable pipeline templates and consistent
+                reporting practices, reducing the need for each team to
+                solve the same engineering problems independently.
+              </li>
+              <li>
+                Supported the NHS assurance process, with testing processes
+                signed off and EMIS-X GP achieving TIF certification.
               </li>
             </ul>
           </article>
@@ -618,14 +631,30 @@
 
             <ul>
               <li>
-                Led automation and quality engineering initiatives, improving
-                test strategy, framework adoption and consistency across
-                engineering teams.
+                Provided technical guidance and coaching to engineers and
+                testers across the department, helping teams improve their
+                automation capabilities and adopt collaborative practices.
               </li>
               <li>
-                Worked with developers and technical stakeholders to strengthen
-                automated coverage and improve quality feedback in delivery
-                pipelines.
+                Built and maintained API automation in C# using NUnit and
+                Refit, UI automation using Playwright and TypeScript, and
+                Postman collections for API testing.
+              </li>
+              <li>
+                Developed a k6 performance-testing proof of concept and
+                established the foundation for migrating an existing core
+                team's load-testing suite from JMeter, implementing scripts
+                for around a dozen API endpoints.
+              </li>
+              <li>
+                Worked with developers to establish UI test harnesses and
+                test-data approaches, addressing practical barriers to
+                reliable automation.
+              </li>
+              <li>
+                Continued contributing to backend features, solution design
+                and release test planning while delivering BDD training
+                and supporting engineering teams.
               </li>
             </ul>
           </article>
@@ -634,19 +663,30 @@
             <div class="job-heading">
               <div>
                 <h3>Senior Software Developer</h3>
-                <p class="company">N-able</p>
+                <p class="company">N-able | Device Management for Apple</p>
               </div>
               <span class="dates">April 2021 – June 2022</span>
             </div>
 
             <ul>
               <li>
-                Developed and maintained software services, contributing to
-                technical design, implementation and code quality.
+                Developed and maintained an event-driven ASP.NET microservice
+                hosted on AWS, delivering backend features for an Apple
+                device management product.
               </li>
               <li>
-                Worked across development and testing to improve reliability
-                and support effective delivery.
+                Built, maintained and repaired CI/CD pipelines, supporting
+                deployments through Azure DevOps to AWS using Docker and
+                Kubernetes-based infrastructure.
+              </li>
+              <li>
+                Contributed to solution design, backlog refinement, pull
+                request reviews and UI automation, working across development
+                and quality engineering.
+              </li>
+              <li>
+                Worked with established code patterns and automated unit
+                testing to support maintainability as the service grew.
               </li>
             </ul>
           </article>
@@ -655,15 +695,26 @@
             <div class="job-heading">
               <div>
                 <h3>Product Owner</h3>
-                <p class="company">SolarWinds MSP / N-able</p>
+                <p class="company">SolarWinds MSP / N-able | Device Management for Apple</p>
               </div>
               <span class="dates">October 2020 – April 2021</span>
             </div>
 
             <ul>
               <li>
-                Prioritised product work and aligned engineering delivery
-                with customer needs and business goals.
+                Managed the product backlog, facilitated daily refinement
+                and Programme Increment planning, and reported delivery
+                progress to the wider business.
+              </li>
+              <li>
+                Worked with engineers to translate business requirements
+                into deliverable work and maintain alignment between product
+                priorities and engineering execution.
+              </li>
+              <li>
+                Continued developing backend features, maintaining delivery
+                pipelines and coaching testers in UI automation while
+                investigating escalated customer issues.
               </li>
             </ul>
           </article>
@@ -679,8 +730,29 @@
 
             <ul>
               <li>
-                Combined hands-on test engineering with facilitation of team
-                delivery and continuous improvement.
+                Built a mobile UI automation framework and test suite from
+                scratch, replacing the existing Calabash approach with
+                Xamarin.UITest.
+              </li>
+              <li>
+                Combined manual testing, automated testing and backend
+                development, including ASP.NET work and unit tests when
+                testing demand allowed.
+              </li>
+              <li>
+                Served as BDD Champion for UK Engineering, delivering
+                training across the organisation and facilitating workshops
+                to help Scrum teams adopt more collaborative practices.
+              </li>
+              <li>
+                Created and delivered a half-day workshop for engineers
+                and stakeholders on the benefits of integrated working
+                practices.
+              </li>
+              <li>
+                Served as Scrum Master for the mobile team from May 2018,
+                improving refinement, communication and the way the team
+                planned and delivered work.
               </li>
             </ul>
           </article>
@@ -691,17 +763,20 @@
 
           <div class="skills">
             <div class="skill-group">
-              <h3>Development</h3>
+              <h3>Development &amp; architecture</h3>
               <p>
-                C#, .NET, ASP.NET, REST APIs, MediatR, Entity Framework, SQL
+                C#, .NET, ASP.NET, REST APIs, event-driven services,
+                MediatR, Entity Framework, FluentValidation, Refit,
+                microservices and solution design.
               </p>
             </div>
 
             <div class="skill-group">
               <h3>Quality engineering</h3>
               <p>
-                API and UI automation, Playwright, Refit, xUnit, NUnit,
-                FluentAssertions, axe, k6, JMeter
+                API automation, Playwright, Selenium, Xamarin.UITest,
+                NUnit, xUnit, FluentAssertions, Verify, axe, k6,
+                JMeter, Postman and Allure.
               </p>
             </div>
 
@@ -709,18 +784,28 @@
               <h3>Platforms &amp; delivery</h3>
               <p>
                 AWS, Docker, Kubernetes, GitHub Actions, Azure DevOps,
-                CI/CD, MySQL, Postman, Allure
+                CI/CD, MySQL, Git, technical coaching, mentoring,
+                backlog refinement and PI planning.
               </p>
             </div>
           </div>
         </section>
 
+        <section class="section">
+          <h2 class="section-title">Additional experience</h2>
+          <p>
+            BDD training and workshops, engineering coaching, technical
+            presentations at testing and agile meetups, and cross-team
+            adoption of collaborative engineering practices.
+          </p>
+        </section>
+
       </div>
 
       <footer class="footer">
-        <a href="mailto:petergsimons@gmail.com">Peter Simons</a> · <a href="https://www.linkedin.com/in/peter-simons-5b263abb">LinkedIn</a> · <a href="https://github.com/the-patience-tester">GitHub</a>
+        Peter Simons · petergsimons@gmail.com ·
+        <a href="https://www.linkedin.com/in/peter-simons-5b263abb/">LinkedIn</a>
       </footer>
-
     </article>
   </main>
   <script>
@@ -735,13 +820,14 @@
       themeToggle.title = label;
     }
 
-    const initialTheme = document.documentElement.dataset.theme
-      || (systemPrefersDark.matches ? "dark" : "light");
-    updateThemeToggle(initialTheme);
+    function getSystemTheme() {
+      return systemPrefersDark.matches ? "dark" : "light";
+    }
+
+    updateThemeToggle(document.documentElement.dataset.theme || getSystemTheme());
 
     themeToggle.addEventListener("click", () => {
-      const currentTheme = document.documentElement.dataset.theme
-        || (systemPrefersDark.matches ? "dark" : "light");
+      const currentTheme = document.documentElement.dataset.theme || getSystemTheme();
       const nextTheme = currentTheme === "dark" ? "light" : "dark";
       document.documentElement.dataset.theme = nextTheme;
       updateThemeToggle(nextTheme);
@@ -750,6 +836,12 @@
         localStorage.setItem("theme", nextTheme);
       } catch (error) {
         console.warn("Unable to save the theme preference.", error);
+      }
+    });
+
+    systemPrefersDark.addEventListener("change", () => {
+      if (!document.documentElement.hasAttribute("data-theme")) {
+        updateThemeToggle(getSystemTheme());
       }
     });
   </script>

@@ -140,16 +140,33 @@
     .theme-toggle[aria-pressed="true"] .theme-icon--moon { display: block; }
 
     .download {
-      display: inline-block;
-      padding: 11px 18px;
+      display: grid;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      place-items: center;
       background: var(--download-background);
       color: var(--download-text);
       border-radius: 7px;
-      font-weight: 700;
       text-decoration: none;
     }
 
     .download:hover { background: var(--download-hover); }
+
+    .download:focus-visible {
+      outline: 3px solid var(--green);
+      outline-offset: 2px;
+    }
+
+    .download-icon {
+      width: 22px;
+      height: 22px;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.8;
+    }
 
     .cv {
       overflow: hidden;
@@ -440,8 +457,16 @@
 <body>
   <main class="page">
     <div class="toolbar">
-      <a class="download" href="cv.pdf" download="Peter-Simons-CV.pdf">
-        Download CV
+      <a class="download" href="cv.pdf" download="Peter-Simons-CV.pdf"
+        aria-label="Download CV as PDF" title="Download CV as PDF">
+        <svg class="download-icon" viewBox="0 0 24 24"
+          aria-hidden="true" focusable="false">
+          <path d="M7 3h7l4 4v14H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"></path>
+          <path d="M14 3v5h5"></path>
+          <text x="12" y="12.5" fill="currentColor" stroke="none"
+            font-size="4.2" font-weight="700" text-anchor="middle">PDF</text>
+          <path d="M12 14v4m-2-2 2 2 2-2"></path>
+        </svg>
       </a>
       <button class="theme-toggle" type="button" aria-pressed="false"
         aria-label="Switch to dark mode" title="Switch to dark mode">
